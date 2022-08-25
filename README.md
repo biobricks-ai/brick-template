@@ -1,9 +1,9 @@
 # How to build bricks
 
-1. Create a brick named `newbrick` from this template
+1. Create a brick named `{newbrick}` from this template
 ```
-gh repo create -p biobricks-ai/brick-template biobricks-ai/newbrick
-gh repo clone biobricks-ai/newbrick
+gh repo create biobricks-ai/{newbrick} -p biobricks-ai/brick-template --public
+gh repo clone biobricks-ai/{newbrick}
 cd newbrick
 ```
 
@@ -23,7 +23,4 @@ git add -A && git commit -m "some message"
 git push
 ```
 7. monitor the bricktools github action
-```
-
-```
 
