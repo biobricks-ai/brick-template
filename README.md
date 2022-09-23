@@ -7,8 +7,15 @@ gh repo clone biobricks-ai/{newbrick}
 cd newbrick
 ```
 
-2. replace stages/1-stage.R with your own stages
-3. replace stages in dvc.yaml with your new stages
+2. Replace stages/1_stage.sh with your own stages
+    Recommended scripts:
+    ``0_download.sh``
+    ``1_unzip.sh``
+    ``2_build.sh`` calling a function to process individual files like
+    ``originalformat2parquet.R`` or ``originalformat2parquet.py```
+
+3. Replace stages in dvc.yaml with your new stages
+    
 4. Build your brick
 ```
 dvc repro # runs new stages
