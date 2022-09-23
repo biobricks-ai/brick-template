@@ -9,10 +9,9 @@ cd newbrick
 
 2. Replace stages/1_stage.sh with your own stages
     Recommended scripts:
-    ``0_download.sh``
-    ``1_unzip.sh``
-    ``2_build.sh`` calling a function to process individual files like
-    ``originalformat2parquet.R`` or ``originalformat2parquet.py```
+    - ``0_download.sh``
+    - ``1_unzip.sh``
+    - ``2_build.sh`` calling a function to process individual files like ``originalformat2parquet.R`` or ``originalformat2parquet.py``
 
 3. Replace stages in dvc.yaml with your new stages
     
