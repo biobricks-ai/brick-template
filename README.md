@@ -7,7 +7,7 @@ gh repo clone biobricks-ai/{newbrick}
 cd newbrick
 ```
 
-2. Replace stages/1_stage.sh with your own stages
+2. Edit stages according to your needs:
     Recommended scripts:
     - ``01_download.sh``
     - ``02_unzip.sh``
@@ -19,14 +19,17 @@ cd newbrick
 ```
 dvc repro # runs new stages
 ```
+
 5. Push the data to biobricks.ai
 ```
 dvc push -r s3.biobricks.ai 
 ```
+
 6. Commit the brick
 ```
 git add -A && git commit -m "some message"
 git push
 ```
+
 7. Monitor the bricktools github action
 
