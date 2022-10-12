@@ -9,9 +9,9 @@ cd newbrick
 
 2. Replace stages/1_stage.sh with your own stages
     Recommended scripts:
-    - ``0_download.sh``
-    - ``1_unzip.sh``
-    - ``2_build.sh`` calling a function to process individual files like ``originalformat2parquet.R`` or ``originalformat2parquet.py``
+    - ``01_download.sh``
+    - ``02_unzip.sh``
+    - ``03_build.sh`` calling a function to process individual files like ``csv2parquet.R`` or ``csv2parquet.py``
 
 3. Replace stages in dvc.yaml with your new stages
     
@@ -23,10 +23,10 @@ dvc repro # runs new stages
 ```
 dvc push -r s3.biobricks.ai 
 ```
-6. commit the brick
+6. Commit the brick
 ```
 git add -A && git commit -m "some message"
 git push
 ```
-7. monitor the bricktools github action
+7. Monitor the bricktools github action
 
