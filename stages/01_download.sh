@@ -29,7 +29,7 @@ cd $downloadpath;
 
 # Download files in parallel
 cat $listpath/files.txt | xargs -P14 -n1 bash -c '
-echo $1
-wget -nH -q -nc -P '$downloadpath' '$ftpbase'$1' {}
+echo $0
+wget -nH -q -nc -P '$downloadpath' '$ftpbase'$0'
 
 echo "Download done."
