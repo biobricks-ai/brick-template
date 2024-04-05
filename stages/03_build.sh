@@ -12,11 +12,11 @@ mkdir -p $listpath
 echo "List path: $listpath"
 
 # Set raw path
-rawpath="$localpath/raw"
+export rawpath="$localpath/raw"
 echo "Raw path: $rawpath"
 
 # Create brick directory
-brickpath="$localpath/brick"
+export brickpath="$localpath/brick"
 mkdir -p $brickpath
 echo "Brick path: $brickpath"
 
@@ -24,7 +24,7 @@ echo "Brick path: $brickpath"
 # calling a Python function with arguments input and output filenames
 cat $listpath/files.txt | tail -n +4 | xargs -P14 -n1 bash -c '
   filename="${0%.*}"
-  echo '$rawpath'/$filename/$filename.txt
-  echo '$brickpath'/$filename.parquet
-  python stages/csv2parquet.py '$rawpath'/$filename.txt '$brickpath'/$filename.parquet
+  echo $rawpath/$filename/$filename.txt
+  echo $brickpath/$filename.parquet
+  python stages/csv2parquet.py $rawpath/$filename.txt $brickpath/$filename.parquet
 '
