@@ -13,7 +13,7 @@ mkdir -p $listpath
 cd $listpath;
 
 # Define the FTP base address
-ftpbase=""
+export ftpbase=""
 
 # Retrieve the list of files to download from FTP base address
 wget --no-remove-listing $ftpbase
@@ -22,14 +22,15 @@ rm .listing
 rm index.html
 
 # Create the download directory
-downloadpath="$localpath/download"
+export downloadpath="$localpath/download"
 echo "Download path: $downloadpath"
 mkdir -p "$downloadpath"
 cd $downloadpath;
 
 # Download files in parallel
 cat $listpath/files.txt | xargs -P14 -n1 bash -c '
-echo $0
-wget -nH -q -nc -P '$downloadpath' '$ftpbase'$0'
+  echo $0
+  wget -nH -q -nc -P $downloadpath $ftpbase$0
+'
 
 echo "Download done."
