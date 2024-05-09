@@ -2,7 +2,7 @@
 
 # Script to download files
 
-# Get local [ath]
+# Get local path
 localpath=$(pwd)
 echo "Local path: $localpath"
 
