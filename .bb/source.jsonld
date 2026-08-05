@@ -1,0 +1,41 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/brick-template",
+  "dcterms:title": "brick-template - BioBricks brick scaffolding template",
+  "dcterms:description": "The GitHub template repository used to scaffold new BioBricks bricks (gh repo create ... -p biobricks-ai/brick-template). It contains placeholder DVC stages (01_download.sh, 02_unzip.sh, 03_build.sh, csv2parquet.R/py) and a how-to README, but no real data and no upstream dataset. There is no data payload to license and no LICENSE file in the repository.",
+  "dcterms:license": {
+    "@id": "UNSTATED",
+    "dcterms:title": "No license stated"
+  },
+  "biobricks:licenseName": "Template scaffold; no data, no stated license",
+  "biobricks:licenseClass": "unknown",
+  "biobricks:merckCommercialUse": "unknown",
+  "dcterms:publisher": "biobricks-ai",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "README.md",
+      "quote": "# How to build bricks ... 1. Create a brick named `{newbrick}` from this template `gh repo create biobricks-ai/{newbrick} -p biobricks-ai/brick-template --public`",
+      "confidence": "high"
+    },
+    {
+      "source": "/mnt/raid2/biobricks/brick-template (filesystem listing)",
+      "quote": "Repository contains only placeholder stages (01_download.sh, 02_unzip.sh, 03_build.sh, csv2parquet.R/py) and dvc.yaml/dvc.lock; no data outputs, no .bb metadata, and no LICENSE file.",
+      "confidence": "high"
+    }
+  ],
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by licensing-provenance annotation agent (Claude Opus). brick-template is the BioBricks scaffolding template repository, not a data brick: its stages are empty placeholders and it ships no upstream dataset. No LICENSE file present. Set UNSTATED/unknown. HUMAN MUST CHECK: whether the template repo should be excluded from the license catalog, and if code licensing matters, add a code LICENSE (e.g. MIT) to the repo - but there is no data to redistribute.",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://github.com/biobricks-ai/brick-template",
+      "dcterms:title": "biobricks-ai/brick-template (brick scaffolding template; no data)",
+      "dcterms:license": {
+        "@id": "UNSTATED",
+        "dcterms:title": "No license stated"
+      },
+      "dcat:landingPage": "https://github.com/biobricks-ai/brick-template"
+    }
+  ]
+}
